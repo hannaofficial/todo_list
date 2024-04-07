@@ -1,0 +1,63 @@
+<%- include('partials/header.ejs'); -%>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+  <div class="box">
+    <% for(let item of listItems){%>
+      <div class="item">
+        <form >
+          <input type="checkbox" onclick="view('<%= item.id %>')" id="checkbox_<%= item.id %>" name="checkbox" value="<%= item.id %>">
+        </form>
+
+        <p id="title<%=item.id%>" class="item_title">
+          <%= item.title %>
+        </p>
+
+        <form class="edit" action="/edit" method="post">
+          <input type="hidden" name="updatedItemId" value="<%= item.id %>">
+          <input id="input<%=item.id%>" type="text" name="updatedItemTitle" value="<%= item.title %>" autocomplete="off"
+            autofocus="true" hidden="true" />
+          <button id="done<%=item.id%>" class="edit" type="submit" hidden><img class="icon"
+              src="/assets/icons/check-solid.svg" alt="tick image"></button>
+        </form>
+        <button id="edit<%=item.id%>" class="edit" onclick="show('<%=item.id%>')" hidden><img class="icon"
+            src="/assets/icons/edit_image.svg" alt="edit image"></button>
+         <form class= "del" action="/delete" method="post">
+              <input type="hidden"  name="deleteItemId" value="<%= item.id %>">
+              <button type="submit" class="delete-button" id="del<%=item.id%>" hidden ><img class="icon" src="/assets/icons/delete.svg" alt="delete image"></button> 
+          </form>   
+           
+      </div>
+      <% } %>
+
+        <form class="item" action="/add" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true" />
+          <button class="add" type="submit" name="list" value=<%=listTitle %> >+</button>
+        </form>
+  </div>
+
+  <script>
+    function show(id) {
+      document.getElementById("title" + id).setAttribute("hidden", true)
+      document.getElementById("edit" + id).setAttribute("hidden", true)
+      document.getElementById("done" + id).removeAttribute("hidden")
+      document.getElementById("input" + id).removeAttribute("hidden")
+    }
+
+    function view(id){
+      document.getElementById("edit" + id).removeAttribute("hidden")
+      document.getElementById("del" + id).removeAttribute("hidden")
+      const checkbox = document.getElementById(`checkbox_${id}`);
+      checkbox.setAttribute('onclick', `hide('${id}')`);
+    }
+    function hide(id){
+      document.getElementById("edit" + id).setAttribute("hidden", true)
+      document.getElementById("del" + id).setAttribute("hidden",true)
+      const checkbox = document.getElementById(`checkbox_${id}`);
+      checkbox.setAttribute('onclick', `view('${id}')`);
+    }
+  </script>
+  <%- include('partials/footer.ejs'); -%>

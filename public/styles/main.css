@@ -1,0 +1,173 @@
+html {
+  background-color: #e4e9fd;
+  
+  min-height: 745px;
+  font-family: "helvetica neue";
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  min-height: 90vh;
+}
+main {
+  text-align: center;
+  flex: 1 0 auto;
+}
+h1 {
+  color: #fff;
+  padding: 10px;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size:40px;
+}
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+  background-color: #3694ed;
+  text-align: center;
+}
+form.edit {
+  display: flex;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+  margin-left: 0;
+}
+
+p {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 20px;
+  color: #00204a;
+}
+.item_title{
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+form {
+  text-align: center;
+  margin-left: 20px;
+}
+form.del{
+  margin-left: 0px;
+}
+button.add {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #3694ed;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+}
+
+button.edit {
+  margin-left: 0px;
+  margin-right: 0px;
+  border: none;
+  background: none;
+}
+button.delete-button{
+  margin-left: 0px;
+  margin-right: 0px;
+  border: none;
+  background: none;
+}
+
+.delete-button:hover {
+  opacity: 0.8; 
+}
+
+.delete-button:hover {
+  box-shadow: 0px 5px 10px rgba(2, 71, 190, 0.2); /* Adds a drop shadow */
+}
+
+.edit:hover {
+  opacity: 0.8; 
+}
+
+.edit:hover {
+  box-shadow: 0px 5px 10px rgba(2, 71, 190, 0.2); /* Adds a drop shadow */
+}
+.icon {
+  height: 20px;
+}
+
+input[type="text"] {
+  text-align: left;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 80%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #3694ed;
+}
+
+::placeholder {
+  color: lightgray;
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  gap: 1rem;
+  border: 0px; 
+  justify-content: center
+}
+.footer{
+  
+    
+    color: #1073cf;       
+    text-align: center;
+    padding: 30px 0;
+    font-family: "Sofia", sans-serif; 
+    
+}
+.pic:hover {
+  opacity: 0.8; 
+}
+
+.pic:hover {
+  box-shadow: 0px 5px 10px rgba(2, 71, 190, 0.2); /* Adds a drop shadow */
+}
+
+.pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; 
+  margin-right: 0px; 
+  margin-top: 20px;
+  
+}
+
